@@ -1,0 +1,97 @@
+body {
+    background-color: #999999;
+    text-align: center;
+}
+
+.clrfx {
+    clear: both;
+}
+
+.container {
+    margin: 20px auto;
+    background-color: #cccccc;
+    border-radius: 15px;
+    padding: 25px;
+    display: inline-block;
+}
+
+.canvas {
+    display: inline-block;
+}
+
+.row {
+    clear: both;
+}
+
+.pxl {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    float: left;
+}
+
+.controlPanel {
+    margin: 5px;
+}
+
+.color, .current-color-box {
+
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.color1 {
+    background-color: red;
+}
+
+.color2 {
+    background-color: blue;
+}
+
+.color3 {
+    background-color: white;
+}
+
+.color4 {
+    background-color: yellow;
+}
+
+.color5 {
+    background-color: green;
+}
+
+.color6 {
+    background-color: brown;
+}
+
+.color7 {
+    background-color: black;
+}
+
+.color8 {
+    background-color: purple;
+}
+
+.color9 {
+    background-color: cyan;
+}
+
+.color10 {
+    background-color: maroon;
+}
+
+.color11 {
+    background-color: sienna;
+}
+
+.color12 {
+    background-color: yellowgreen;
+}
+
+.canvas-size, .current-color, .canvas-size *, .current-color * {
+    display: inline-block;
+}
+
