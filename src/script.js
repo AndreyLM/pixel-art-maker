@@ -4,11 +4,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var currentColor = document.getElementsByClassName('current-color-box')[0];
         var colors = document.getElementsByClassName('colors')[0];
         var canvasSize = document.getElementById('applyCanvasSize');
+        var colorPicker = document.getElementById('colorPicker');
+        var btnLoad = document.getElementById('btn-load');
+        var btnSave = document.getElementById('btn-save');
         var brushColor = 'red';
         var canvasHeight = 100;
         var canvasWidth = 300;
 
         currentColor.style.backgroundColor = brushColor;
+
+
+        addEvents(canvas, canvasSize, colors, colorPicker, brushColor, currentColor, );
+
+        createCanvas(canvasWidth, canvasHeight, canvas);
+    }
+
+    function addEvents(canvas, canvasSize, colors, colorPicker, brushColor, currentColor) {
+        var mouseOverHandler = function (e) {
+            e.target.style.backgroundColor = brushColor;
+        };
 
         colors.addEventListener('click', function (e) {
             brushColor = window.getComputedStyle(e.target, null).getPropertyValue("background-color");
@@ -20,6 +34,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
             e.target.style.backgroundColor = brushColor;
         });
 
+        canvas.addEventListener('mouseup', function (e) {
+            canvas.removeEventListener('mouseover', mouseOverHandler);
+        });
+
+        canvas.addEventListener('mousedown', function (e) {
+            canvas.addEventListener('mouseover', mouseOverHandler);
+        });
+
+
         canvasSize.addEventListener('click', function (e) {
             // alert('Click');
 
@@ -27,7 +50,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             e.preventDefault();
         });
 
-        createCanvas(canvasWidth, canvasHeight, canvas);
+        colorPicker.addEventListener('change', function (e) {
+            brushColor = e.target.value;
+            currentColor.style.backgroundColor = e.target.value;
+        });
     }
 
     function createCanvas(width, height, parent) {
@@ -43,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
 
             parent.appendChild(row);
-            console.log(i);
         }
     }
 
