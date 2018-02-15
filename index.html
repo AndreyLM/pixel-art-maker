@@ -56,8 +56,20 @@
                 <div class="color">
                     <input type="color" id="colorPicker">
                 </div>
+                <div class="clrfx"></div>
+                <form id="color-type">
+
+                    <input type="radio" class="color-fill" id="brushFill"
+                    name="color-fill" value="brush">
+                    <label for="brushFill">brush</label>
+
+                    <input type="radio" class="color-fill" id="floodFill"
+                    name="color-fill" value="flood">
+                    <label for="floodFill">flood fill</label>
+                </form>
             </div>
             <div class="storage">
+                <button id="btn-clear">Clear</button>
                 <button id="btn-save">Save</button>
                 <button id="btn-load">Load</button>
             </div>
